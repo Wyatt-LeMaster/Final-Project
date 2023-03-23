@@ -7,9 +7,9 @@
 
 
 ## Required Team Responsibilties 
-## unit testing: 
-## UI (JSP): 
-## doing research about API: 
+### unit testing: 
+### UI (JSP): 
+### doing research about API: 
 
 
 
