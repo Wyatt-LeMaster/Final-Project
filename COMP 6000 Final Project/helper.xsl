@@ -12,9 +12,13 @@
 	 <html>
 			<head>
 				<title>Hobby Helper</title>
-				<link href="style.css" rel="stylesheet" type="text/css"/>
+				<link href="helperstyles.css" rel="stylesheet" type="text/css"/>
 			</head>
-			<body></body>
+			<body>
+				<h1>Hobby Helper</h1>
+				<h2><img src="Auburn_logo.png" alt="The Good Earth"/></h2>
+			
+			</body>
 		</html>
  
  
