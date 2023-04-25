@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Activities>
+<!--
+	<Activity AID="A001">
+	<Description></Description>
+	<Similar></Similar>
+	</Activity>
+-->	
+	<!-- Baseball Club -->
+	<Activity AID="A001">
+	<Description>Baseball Club is hosting open field games</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Basketball Club -->
+	<Activity AID="A002">
+	<Description>Basketball Club is hosting pick up games</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	
+	<!-- Bass Fishing Club -->
+	<Activity AID="A003">
+	<Description>Bass Fishing Club is hosting a fishing expedition</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Clay Shooting Club -->
+	<Activity AID="A004">
+	<Description>Clay Shooting Club is hosting target pratice</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Climbing Club -->
+	<Activity AID="A005">
+	<Description>Climbing is hosting mountain climbing</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Cycling Club -->
+	<Activity AID="A006">
+	<Description>Cycling Club is hosting a marathon</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Field Hockey Club -->
+	<Activity AID="A007">
+	<Description>Field Hockey Club is hosting a game</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Golf Club -->
+	<Activity AID="A008">
+	<Description>Golf Club is hosting golf tournament</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Ice Hockey Club -->
+	<Activity AID="A009">
+	<Description>Ice Hockey Club is hosting Ice Hockey practice</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Lacrosse Club -->
+	<Activity AID="A010">
+	<Description>Lacrosse Club is hosting</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Powerlifting Club -->
+	<Activity AID="A011">
+	<Description>Powerlifting Club is hosting</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Rowing Club -->
+	<Activity AID="A012">
+	<Description>Rowing Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Rugby Club -->
+	<Activity AID="A013">
+	<Description>Rugby Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Sailing Club -->
+	<Activity AID="A014">
+	<Description>Sailing Club is hosting a fishing expedition</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Soccer Club -->
+	<Activity AID="A015">
+	<Description>Soccer Club is hosting</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Softball Club -->
+	<Activity AID="A016">
+	<Description>Softball Club is hosting</Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Swimming Club -->
+	<Activity AID="A017">
+	<Description>Swimming Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Team Handball Club -->
+	<Activity AID="A018">
+	<Description>Team Handball Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Tennis Club -->
+	<Activity AID="A019">
+	<Description>Tennis Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Ultimate Frisbee Club -->
+	<Activity AID="A020">
+	<Description>Ultimate Frisbee Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Volleyball Club -->
+	<Activity AID="A021">
+	<Description>Volleyball Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Waterpolo Club -->
+	<Activity AID="A022">
+	<Description>Waterpolo Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Waterski Club -->
+	<Activity AID="A023">
+	<Description>Waterski Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+	<!-- Wrestling Club -->
+	<Activity AID="A024">
+	<Description>Wrestling Club is hosting </Description>
+	<Similar> Monday/Thursday  5pm </Similar>
+	</Activity>
+	
+</Activities>
