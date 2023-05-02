@@ -34,13 +34,13 @@ public class ReserveNavServlet extends HttpServlet {
         }
         if (loggedIn == true) {
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("reserve.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Friends.jsp");
             request.setAttribute("login", true);
             requestDispatcher.forward(request, response);
         }
         else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
-            session.setAttribute("file","reserve.jsp");
+            session.setAttribute("file","Friends.jsp");
             request.setAttribute("error", "Passwords must match!");
             requestDispatcher.forward(request, response);
         }
