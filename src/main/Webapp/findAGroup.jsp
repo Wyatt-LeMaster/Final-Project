@@ -104,6 +104,7 @@
             </form>
         </div>
     </div>
+    <p>${login}</p><br/>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
 
         <div class="overflow-scroll" style="max-height: 30vh;">

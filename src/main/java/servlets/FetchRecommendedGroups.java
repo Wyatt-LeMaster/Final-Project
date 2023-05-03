@@ -39,17 +39,23 @@ public class FetchRecommendedGroups extends HttpServlet {
     if (session != null) {
       UserModel user = (UserModel) session.getAttribute("user");
 
-      try {
-        List<GroupModel> groupList = db.recommendGroups(user);
-        request.setAttribute("list_of_groups", groupList);
-      } catch (SQLException e) {
-        e.printStackTrace();
+      if (user != null) {
+        try {
+          List<GroupModel> groupList = db.recommendGroups(user);
+          request.setAttribute("list_of_groups", groupList);
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+
+        String file = (String) session.getAttribute("file");
+
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
+        requestDispatcher.forward(request, response);
+      } else {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("findAGroup.jsp");
+        request.setAttribute("login", "Please login to continue.");
+        requestDispatcher.forward(request, response);
       }
-
-      String file = (String) session.getAttribute("file");
-
-      RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
-      requestDispatcher.forward(request, response);
     }
   }
 }
