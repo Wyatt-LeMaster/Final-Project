@@ -49,6 +49,52 @@ public class MySQLdb {
     }
 
 
+    public UserModel fetchUser(int user_id) throws SQLException {
+        UserModel userModel = null;
+        List<Integer> ActivityList = new ArrayList<Integer>();
+        int activity = 0;
+        // Statement
+        String qLogin = "SELECT * FROM user_info WHERE user_id = '" + user_id + "'";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(qLogin);
+
+
+        if (resultSet.next()) {
+            String fname = resultSet.getString("first_name");
+            String lname = resultSet.getString("last_name");
+            String email = resultSet.getString("email");
+
+            int id = resultSet.getInt("user_id");
+            String name = fname + " " + lname;
+            resultSet.close();
+            statement.close();
+
+            String qActivityData = "SELECT * FROM user_activity_data WHERE user_id = '" + user_id + "'";
+            Statement activityStatement = connection.createStatement();
+            ResultSet activityResultSet = activityStatement.executeQuery(qActivityData);
+
+            try {
+                while (activityResultSet.next()) {
+                    activity = activityResultSet.getInt("activity_id"); // here for debugging
+                    ActivityList.add(activity);
+                }
+            }
+            catch(SQLException e)
+            {            e.printStackTrace();
+            }
+
+            userModel = new UserModel(id, fname, lname, username, password, email, ActivityList); //Uncomment this when working on it. !!!
+
+//        preparedStatement.close();
+            return userModel;
+        } else {
+            return null;
+        }
+
+    }
+
+
+
     /**
      * Queries database for user info and compares with inputted data.
      * If match creates userModel object and returns that
@@ -60,23 +106,40 @@ public class MySQLdb {
      */
     public UserModel doLogin(String username, String password) throws SQLException {
         UserModel userModel = null;
-
+        List<Integer> ActivityList = new ArrayList<Integer>();
+        int activity = 0;
         // Statement
-        String qLogin = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+        String qLogin = "SELECT * FROM user_info WHERE username = '" + username + "' AND password = '" + password + "'";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(qLogin);
 
 
         if (resultSet.next()) {
-            String fname = resultSet.getString("fname");
-            String lname = resultSet.getString("lname");
+            String fname = resultSet.getString("first_name");
+            String lname = resultSet.getString("last_name");
+            String email = resultSet.getString("email");
+
             int id = resultSet.getInt("user_id");
             String name = fname + " " + lname;
-
-
-            //userModel = new UserModel(id, fname, lname, username, password); //Uncomment this when working on it. !!!
             resultSet.close();
             statement.close();
+
+            String qActivityData = "SELECT * FROM user_activity_data WHERE user_id = '" + id + "'";
+            Statement activityStatement = connection.createStatement();
+            ResultSet activityResultSet = activityStatement.executeQuery(qActivityData);
+
+            try {
+                while (activityResultSet.next()) {
+                    activity = activityResultSet.getInt("activity_id"); // here for debugging
+                    ActivityList.add(activity);
+                }
+            }
+            catch(SQLException e)
+            {            e.printStackTrace();
+            }
+
+            userModel = new UserModel(id, fname, lname, username, password, email, ActivityList); //Uncomment this when working on it. !!!
+
 //        preparedStatement.close();
             return userModel;
         } else {
@@ -96,7 +159,7 @@ public class MySQLdb {
      * @return
      * @throws SQLException
      */
-    public Boolean register(String username, String password, String firstName, String lastName, List<Integer> activity_list) throws SQLException {
+    public Boolean register(String username, String password, String firstName, String lastName, String email, List<Integer> activity_list) throws SQLException {
         UserModel userModel = null;
 
 
@@ -127,7 +190,7 @@ public class MySQLdb {
             }
 
             id++; // adds one to the last ID
-            String qLogin = "INSERT INTO user_info (user_id, first_name, last_name, username, password) VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + username + "', '" + password + "')";
+            String qLogin = "INSERT INTO user_info (user_id, first_name, last_name, username, password, email) VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + username + "', '" + password + "', '" + email +"')";
             Statement statement = connection.createStatement();
             try {
                 int resultSet = statement.executeUpdate(qLogin);
@@ -152,6 +215,41 @@ public class MySQLdb {
         }
 
     }
+
+
+    /**
+     *
+     * Gets book data from database
+     *
+     * @param
+     * @return
+     * @throws SQLException
+     */
+    public List<UserModel> recommendFriend(UserModel user) throws SQLException {
+        String qGetFriends = null;
+        int activityID = 0;
+        List<UserModel> list = new ArrayList<>();
+        UserModel possibleFriend = new UserModel(0,"","","","","",new ArrayList<>());
+
+       // selecting the activities from the activity list that don't go to the requesting user.
+        qGetFriends = "select distinct user_id from user_activity_data where user_id != '" + user.getUser_id() + "'";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(qGetFriends);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+
+            possibleFriend = fetchUser(resultSet.getInt("user_id"));
+            possibleFriend.getActivity_list().retainAll(user.getActivity_list()); // removes all activities that are not shared with the original user
+            if(possibleFriend.getActivity_list().size()>0) { // if there are any matching activities add the user to the list.
+                list.add(possibleFriend);
+            }
+        }
+        resultSet.close();
+        preparedStatement.close();
+
+        return list;
+    }
+
 
 
     /**

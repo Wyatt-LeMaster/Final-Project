@@ -3,7 +3,7 @@
  *  JSP Assignment 2
  *  Wyatt LeMaster
  *  5/2/2023
- *  servlet logs in a user.
+ *  servlet calls database to fetch book list object
  *
  *
  */
@@ -11,6 +11,9 @@
 
 package servlets;
 
+import models.ActivityModel;
+import models.BookModel;
+import models.TopicModel;
 import models.UserModel;
 
 import javax.servlet.RequestDispatcher;
@@ -22,52 +25,48 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
 
-@WebServlet(name = "LoginServlet", value = "/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "FetchRecommendedFriends", value = "/FetchRecommendedFriends")
+public class FetchRecommendedFriends extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+         doPost(request, response);
+
+
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
+        HttpSession session = request.getSession();
         MySQLdb db = MySQLdb.getInstance();
 
 
-        UserModel user = null;
-        try {
-            user = db.doLogin(username, password);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        if (session != null) {
+            UserModel user = (UserModel) session.getAttribute("user");
 
 
-        if (user!=null) {
+            try {
+                List<UserModel> friendList = db.recommendFriend(user);
+                request.setAttribute("list_of_friends", friendList);
 
 
-        HttpSession session = request.getSession();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
-            session.setAttribute("user", user);
-            session.setAttribute("loggedIn", true);
 
             String file = (String) session.getAttribute("file");
 
-          //  if(Objects.equals(file, "index.jsp")){file = "home.jsp";}
-
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);
-        }
-        else {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
-            request.setAttribute("loginError", "Incorrect Username or password");
-            requestDispatcher.forward(request, response);
-        }
+
+
         }
 
+
     }
+}
 

@@ -58,6 +58,11 @@
     </div>
 
     <div class="form-floating">
+        <input id="email" name="email" type="text" class = "form-control" placeholder="email"/>
+        <label for="email">email</label>
+    </div>
+
+    <div class="form-floating">
 
         <input id="password" name="password" type="password" class = "form-control" placeholder="password"/>
         <label for="password">Password</label>
