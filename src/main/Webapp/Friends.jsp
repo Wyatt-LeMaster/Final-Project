@@ -49,12 +49,12 @@
 
         %>
 
-    <link href="<c:url value="sign-in.css" />" rel="stylesheet">
-    <link href="<c:url value="headers.css" />" rel="stylesheet">
-    <link href="<c:url value="dropdowns.css" />" rel="stylesheet">
+    <link href="<c:url value="css/sign-in.css" />" rel="stylesheet">
+    <link href="<c:url value="css/headers.css" />" rel="stylesheet">
+    <link href="<c:url value="css/dropdowns.css" />" rel="stylesheet">
     <link href="headers.css" rel="stylesheet">
-    <link href="<c:url value="bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="Style.css" />" rel="stylesheet">
+    <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="css/Style.css" />" rel="stylesheet">
     <title>Sessions and Cookies</title>
 
     <p></p>
@@ -72,7 +72,7 @@
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="home.jsp" class="nav-link " aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="findAFriend.jsp" class="nav-link " aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="register.jsp" class="nav-link" aria-current="page">register</a></li>
                     <li class="nav-item"><a href="ReserveNavServlet" action="ReserveNavServlet" method="post" onclick="return validate()" class="nav-link active" aria-current="page">Reservations</a></li>
 

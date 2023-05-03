@@ -173,8 +173,6 @@ public class MySQLdb {
         ResultSet UsernameResult = preparedStatementCheck.executeQuery();
 
 
-
-
         if (UsernameResult.next()) {
 
             return false;
@@ -219,7 +217,7 @@ public class MySQLdb {
 
     /**
      *
-     * Gets book data from database
+     *
      *
      * @param
      * @return
