@@ -10,6 +10,7 @@
 
 
 package servlets;
+
 import models.UserModel;
 
 import javax.servlet.RequestDispatcher;
@@ -41,10 +42,21 @@ public class FetchRecommendedFriends extends HttpServlet {
             if (session.getAttribute("user") != null) {
                 UserModel user = (UserModel) session.getAttribute("user");
 
+            if (user != null) {
+                try {
+                    List<UserModel> friendList = db.recommendFriend(user);
+                    request.setAttribute("list_of_friends", friendList);
+
 
                 try {
                     List<UserModel> friendList = db.recommendFriend(user);
                     request.setAttribute("list_of_friends", friendList);
+
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
 
 
                 } catch (SQLException e) {
@@ -63,7 +75,7 @@ public class FetchRecommendedFriends extends HttpServlet {
             {
                 String file = (String) session.getAttribute("file");
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
-                request.setAttribute("error", "You must login!");
+                request.setAttribute("error", "Please login to continue.");
                 requestDispatcher.forward(request, response);
 
             }
@@ -72,8 +84,9 @@ public class FetchRecommendedFriends extends HttpServlet {
         {
             String file = (String) session.getAttribute("file");
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
-            request.setAttribute("error", "You must login!");
+            request.setAttribute("error", "Please login to continue.");
             requestDispatcher.forward(request, response);
+
 
         }
 

@@ -142,7 +142,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <a href="findAFriend.jsp">
+                                    <a href="findAGroup.jsp">
                                         <button class="btn btn-primary" id="button-Group" type="button">Go!</button>
                                     </a>
                                 </div>

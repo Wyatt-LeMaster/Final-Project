@@ -1,11 +1,10 @@
-<!--
-*
-*
-*  Wyatt LeMaster
-*  5/2/2023
-*
-*
--->
+<%--
+  Created by IntelliJ IDEA.
+  User: emmaingram
+  Date: 5/3/23
+  Time: 1:48 PM
+  To change this template use File | Settings | File Templates.
+--%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="models.UserModel" %>
@@ -31,21 +30,21 @@
 <main>
 
     <style>
-        th, td {
-            padding: 15px;
-        }
+      th, td {
+        padding: 15px;
+      }
 
-        tr:nth-child(even) {
-            background-color: #D6EEEE;
-        }
+      tr:nth-child(even) {
+        background-color: #D6EEEE;
+      }
 
-        .dropdown:hover .dropdown-content {display: block;}
+      .dropdown:hover .dropdown-content {display: block;}
     </style>
 
     <%
         boolean isLoggedIn = false;
         UserModel user = null;
-        session.setAttribute("file", "findAFriend.jsp");
+        session.setAttribute("file", "findAGroup.jsp");
         try {
             isLoggedIn = (boolean) session.getAttribute("loggedIn");
         }
@@ -75,7 +74,7 @@
                         <li class="nav-item"><a class="nav-link " href="index.jsp">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Login.jsp">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="FetchActivitiesServlet" action="FetchActivitiesServlet" method="post" onclick="return validate()">Register </a></li>
-                        <li class="nav-item"><a class="nav-link" href="LogoutServlet" action="LogoutServlet" method="post">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="register.jsp">Logout</a></li>
                     </ul>
 
 
@@ -88,52 +87,51 @@
 </main>
 
 <div class="px-4 pt-5 my-5 text-center border-bottom justify-content-center  flex-fill">
-    <h1 class="display-4 fw-bold text-body-emphasis">Find a friend</h1>
+    <h1 class="display-4 fw-bold text-body-emphasis">Find Your Group</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Find a friend</p>
+        <p class="lead mb-4">Find Your Group</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-
         </div>
     </div>
 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
         <div class="container px-5">
-            <form action ="FetchRecommendedFriends" method="post">
+            <form action ="FetchRecommendedGroups" method="post">
                 <div class="form-floating">
+                    <!-- <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>-->
                     <input type="submit" value="Find" />
                 </div>
             </form>
         </div>
     </div>
     <p>${login}</p><br/>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
 
         <div class="overflow-scroll" style="max-height: 30vh;">
 
             <div class="container px-5">
-            <table>
+                <table>
                     <tr>
-                        <th>Friend name </th>
-                        <th>email </th>
-                        <th># of activities shared  </th>
+                        <th>Group Name</th>
 
                     </tr>
-                <c:forEach var="each_friend" items="${list_of_friends}">
-                    <tr>
-                        <td>${each_friend.getFname()}, ${each_friend.getLname()}</td>
+                    <c:forEach var="each_group" items="${list_of_groups}">
+                        <tr>
+                            <td>${each_group.getName()}</td>
 
-                        <td>${each_friend.getEmail()}</td>
-                        <td>${each_friend.getActivity_list().size()}</td>
-
-                    </tr>
-                </c:forEach>
-                <p>${error}</p>
+                        </tr>
+                    </c:forEach>
                 </table>
 
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+<p>${error}</p>
 
 </body>
 
