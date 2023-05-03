@@ -1,7 +1,15 @@
 <%@ page import="models.UserModel" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="javax.xml.parsers.DocumentBuilderFactory" %>
+<%@ page import="javax.xml.parsers.DocumentBuilder" %>
+<%@ page import="org.w3c.dom.Document" %>
+<%@ page import="org.w3c.dom.NodeList" %>
+<%@ page import="org.w3c.dom.Node" %>
+<%@ page import="org.w3c.dom.Element" %>
+<%@ page import="java.io.File" %>
+<%@ page import="javax.xml.parsers.ParserConfigurationException" %>
+<%@ page import="org.xml.sax.SAXException" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%
     boolean isLoggedIn = false;
     UserModel user = null;
@@ -23,6 +31,29 @@
         message = "logged out";
     }
 %>
+
+<!--Merry added this -->
+<%
+    // Get the XML file and its contents
+    File xmlFile = new File("C:\\Users\\wyatt\\Box\\Spring 2023\\Web app\\FinalProject\\ProjectFiles\\HobbyHelper1\\src\\main\\Webapp\\xml\\group.xml"); // **** MIGHT HAVE TO CHANGE PATH ****
+    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    DocumentBuilder db = null;
+    try {
+        db = dbf.newDocumentBuilder();
+    } catch (ParserConfigurationException e) {
+        throw new RuntimeException(e);
+    }
+    Document d = null;
+    try {
+        d = db.parse(xmlFile);
+    } catch (SAXException e) {
+        throw new RuntimeException(e);
+    }
+    d.getDocumentElement().normalize();
+    NodeList groupsNL = d.getElementsByTagName("Group");
+%>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -80,6 +111,8 @@
                             <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
                         </section>
                     </article>
+                    <!-- Group content -->
+
                     <!-- Comments section-->
                     <section class="mb-5">
                         <div class="card bg-light">
@@ -152,7 +185,27 @@
                     <!-- Side widget-->
                     <div class="card mb-4">
                         <div class="card-header">Side Widget</div>
-                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                        <div class="card-body"><article>
+                            <!-- Post header-->
+                            <header class="mb-4">
+                                <!-- Post title-->
+                                <h2 class="fw-bolder mb-4 mt-5">Current Hobby Helper Groups</h2>
+                                <!-- Post meta content-->
+                            </header>
+                            <%
+                                // Loop through each group and display it and its description
+                                for (int i = 0; i < groupsNL.getLength(); i++) {
+                                    Node n = groupsNL.item(i);
+                                    Element e = (Element) n;
+                            %>
+                            <section class="mb-5">
+                                <p class="fs-5 mb-4"><%=e.getElementsByTagName("name").item(0).getTextContent()%>: <%=e.getElementsByTagName("Description").item(0).getTextContent()%></p>
+                            </section>
+                            <%
+                                }
+                            %>
+                        </article>
+                        </div>
                     </div>
                 </div>
             </div>
