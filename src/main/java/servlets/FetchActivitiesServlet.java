@@ -12,8 +12,6 @@
 package servlets;
 
 import models.ActivityModel;
-import models.BookModel;
-import models.TopicModel;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
