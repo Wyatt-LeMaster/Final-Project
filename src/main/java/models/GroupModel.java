@@ -11,10 +11,22 @@
 package models;
 
 public class GroupModel {
-  public GroupModel(String name) {
+  public GroupModel(String name, int group_id) {
+
+    this.group_id = group_id;
     this.name = name;
   }
   private String name;
+  private int group_id;
+  public int getGroup_id() {
+    return group_id;
+  }
+
+  public void setGroup_id(int group_id) {
+    this.group_id = group_id;
+  }
+
+
 
   public void setName(String name) { this.name = name; }
 

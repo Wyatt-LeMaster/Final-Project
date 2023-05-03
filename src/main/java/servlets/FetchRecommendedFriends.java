@@ -28,7 +28,7 @@ import java.util.List;
 public class FetchRecommendedFriends extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         doPost(request, response);
+        doPost(request, response);
     }
 
 
@@ -42,56 +42,41 @@ public class FetchRecommendedFriends extends HttpServlet {
             if (session.getAttribute("user") != null) {
                 UserModel user = (UserModel) session.getAttribute("user");
 
-            if (user != null) {
-                try {
-                    List<UserModel> friendList = db.recommendFriend(user);
-                    request.setAttribute("list_of_friends", friendList);
+                if (user != null) {
+                    try {
+                        List<UserModel> friendList = db.recommendFriend(user);
+                        request.setAttribute("list_of_friends", friendList);
 
 
-                try {
-                    List<UserModel> friendList = db.recommendFriend(user);
-                    request.setAttribute("list_of_friends", friendList);
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
 
 
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                    String file = (String) session.getAttribute("file");
+
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
+                    requestDispatcher.forward(request, response);
+
+
+                } else {
+                    String file = (String) session.getAttribute("file");
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
+                    request.setAttribute("error", "Please login to continue.");
+                    requestDispatcher.forward(request, response);
+
                 }
-
-
-
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-
-
-                String file = (String) session.getAttribute("file");
-
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
-                requestDispatcher.forward(request, response);
-
-
-            }
-            else
-            {
+            } else {
                 String file = (String) session.getAttribute("file");
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
                 request.setAttribute("error", "Please login to continue.");
                 requestDispatcher.forward(request, response);
 
+
             }
-        }
-        else
-        {
-            String file = (String) session.getAttribute("file");
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
-            request.setAttribute("error", "Please login to continue.");
-            requestDispatcher.forward(request, response);
 
 
         }
-
-
-
     }
 }
 
