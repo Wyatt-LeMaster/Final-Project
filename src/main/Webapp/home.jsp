@@ -71,7 +71,7 @@
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                     <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                    <span class="fs-4">Library Login</span>
+                    <span class="fs-4">Hobby Helper</span>
                 </a>
 
                 <ul class="nav nav-pills">
@@ -89,9 +89,9 @@
 </main>
 
 <div class="px-4 pt-5 my-5 text-center border-bottom justify-content-center  flex-fill">
-    <h1 class="display-4 fw-bold text-body-emphasis">Browse Library</h1>
+    <h1 class="display-4 fw-bold text-body-emphasis">Find a friend</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Browse library</p>
+        <p class="lead mb-4">Find a friend</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
 <!--
             <form action="FetchBookServlet" method="post" onsubmit="return validate()">
@@ -115,7 +115,7 @@
 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
         <div class="container px-5">
-            <form action ="FetchActivitiesServlet">
+            <form action ="FetchRecommendedFriends" method="post">
                 <div class="form-floating">
                    <!-- <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>-->
                     <input type="submit" value="Reserve" />
@@ -136,11 +136,11 @@
                         <th>Book availability </th>
 
                     </tr>
-                <c:forEach var="each_activity" items="${list_of_activities}">
+                <c:forEach var="each_friend" items="${list_of_friends}">
                     <tr>
-                        <td>${each_activity.getActivityID()}</td>
-                        <td>${each_activity.getName()}</td>
-                        <td>${each_activity.getCategory()}</td>
+                        <td>${each_friend.getFname()}</td>
+                        <td>${each_friend.getLname()}</td>
+                        <td>${each_friend.getEmail()}</td>
 
                     </tr>
                 </c:forEach>
