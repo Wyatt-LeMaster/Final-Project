@@ -25,7 +25,8 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Login.jsp">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="LogoutServlet">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="FetchActivitiesServlet" action="FetchActivitiesServlet" method="post" onclick="return validate()">Register </a></li>
+                        <li class="nav-item"><a class="nav-link" href="register.jsp">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -105,8 +106,9 @@
                         <div class="card-header">Find Friends!</div>
                         <div class="card-body">
                             <div class="input-group">
+                                <a href="home.jsp">
                                 <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-
+                                </a>
                             </div>
                         </div>
                     </div>

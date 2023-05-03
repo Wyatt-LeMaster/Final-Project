@@ -15,14 +15,14 @@
 <html>
 
 <head>
-    <link href="<c:url value="sign-in.css" />" rel="stylesheet">
-    <link href="<c:url value="headers.css" />" rel="stylesheet">
-    <link href="<c:url value="dropdowns.css" />" rel="stylesheet">
+    <link href="<c:url value="css/sign-in.css" />" rel="stylesheet">
+    <link href="<c:url value="css/headers.css" />" rel="stylesheet">
+    <link href="<c:url value="css/dropdowns.css" />" rel="stylesheet">
 
     <link href="headers.css" rel="stylesheet">
-    <link href="<c:url value="bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
 
-    <link href="<c:url value="Style.css" />" rel="stylesheet">
+    <link href="<c:url value="css/Style.css" />" rel="stylesheet">
     <title>Sessions and Cookies</title>
 
 
@@ -93,7 +93,7 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Browse library</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-
+<!--
             <form action="FetchBookServlet" method="post" onsubmit="return validate()">
                 <h1 class="h3 mb-3 fw-normal">Search</h1>
 
@@ -107,17 +107,17 @@
                 </select>
                 <input type="submit" value="Filter" />
 
-                <!--<input type="Button" value="Reserve Book" action="ReserveNavServlet" onclick="document.location='ReserveNavServlet'"/>-->
+                <input type="Button" value="Reserve Book" action="ReserveNavServlet" onclick="document.location='ReserveNavServlet'"/>
             </form>
-
+-->
         </div>
     </div>
 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
         <div class="container px-5">
-            <form action ="ReserveServlet">
+            <form action ="FetchActivitiesServlet">
                 <div class="form-floating">
-                    <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>
+                   <!-- <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>-->
                     <input type="submit" value="Reserve" />
                 </div>
             </form>
@@ -136,15 +136,14 @@
                         <th>Book availability </th>
 
                     </tr>
-                    <c:forEach var="each_book" items="${list_of_books}">
-                        <tr>
-                            <td>${each_book.getBook_id()}</td>
-                            <td>${each_book.getBook_name()}</td>
-                            <td>${each_book.getAuthor_name()}</td>
-                            <td>${each_book.getIs_available()}</td>
+                <c:forEach var="each_activity" items="${list_of_activities}">
+                    <tr>
+                        <td>${each_activity.getActivityID()}</td>
+                        <td>${each_activity.getName()}</td>
+                        <td>${each_activity.getCategory()}</td>
 
-                        </tr>
-                    </c:forEach>
+                    </tr>
+                </c:forEach>
                 </table>
 
             </div>

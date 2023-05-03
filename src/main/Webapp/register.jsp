@@ -15,11 +15,11 @@
 <html>
 <head>
     <title>Sessions and Cookies</title>
-    <link href="<c:url value="sign-in.css" />" rel="stylesheet">
-    <link href="<c:url value="headers.css" />" rel="stylesheet">
+    <link href="<c:url value="css/sign-in.css" />" rel="stylesheet">
+    <link href="<c:url value="css/headers.css" />" rel="stylesheet">
 
     <link href="headers.css" rel="stylesheet">
-    <link href="<c:url value="bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
 
 </head>
 <body class = "text-center">
@@ -85,10 +85,41 @@
     </div>
 
     </br>
+
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+
+        <div class="overflow-scroll" style="max-height: 30vh;">
+
+            <div class="container px-5">
+                <h1 class="h3 mb-3 fw-normal">Select all that apply</h1>
+
+                    <table>
+
+                    <tr>
+                        <th></th>
+                        <th>Activity Name</th>
+                    </tr>
+
+                    <c:forEach var="each_activity" items="${list_of_activities}">
+                        <tr>
+                            <td><input type="checkbox" id="${each_activity.getActivityID()}" name="Checkbox ${each_activity.getActivityID()}" value="${each_activity.getActivityID()}"></td>
+                            <td>${each_activity.getName()}</td>
+
+                        </tr>
+                    </c:forEach>
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
     <input class="w-100 btn btn-lg btn-primary"  type="submit" name="Login" value="Register" /> <br/> </br>
     <span id="error_msg"></span>
 
 </form>
+
+
 
 
 
