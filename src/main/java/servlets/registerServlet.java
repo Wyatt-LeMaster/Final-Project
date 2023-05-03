@@ -69,6 +69,7 @@ public class registerServlet extends HttpServlet {
 
 
         String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirm = request.getParameter("passwordCON");
         String firstName = request.getParameter("firstName");
@@ -78,7 +79,7 @@ public class registerServlet extends HttpServlet {
 
 
 
-            UserModel userModel = new UserModel(1, firstName, lastName, username, password, userActivities);
+            UserModel userModel = new UserModel(1, firstName, lastName, username, password, email, userActivities);
 
 
 
@@ -87,7 +88,7 @@ public class registerServlet extends HttpServlet {
 
             Boolean isSuccess = false;
             try {
-                isSuccess = db.register(username, password, firstName, lastName,userActivities);
+                isSuccess = db.register(username, password, firstName, lastName, email, userActivities);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

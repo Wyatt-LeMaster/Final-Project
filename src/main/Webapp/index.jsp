@@ -1,7 +1,28 @@
+<%@ page import="models.UserModel" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%
+    boolean isLoggedIn = false;
+    UserModel user = null;
+    session.setAttribute("file", "index.jsp");
+    try {
+        isLoggedIn = (boolean) session.getAttribute("loggedIn");
+    }
+    catch(Exception e) {
 
+    }
+
+    String message = "";
+    if (isLoggedIn) {
+
+        user = (UserModel) session.getAttribute("user");
+        message = user.getUsername();
+    }
+    else {
+        message = "logged out";
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>

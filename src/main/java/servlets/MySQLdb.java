@@ -60,23 +60,40 @@ public class MySQLdb {
      */
     public UserModel doLogin(String username, String password) throws SQLException {
         UserModel userModel = null;
-
+        List<Integer> ActivityList = new ArrayList<Integer>();
+        int activity = 0;
         // Statement
-        String qLogin = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+        String qLogin = "SELECT * FROM user_info WHERE username = '" + username + "' AND password = '" + password + "'";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(qLogin);
 
 
         if (resultSet.next()) {
-            String fname = resultSet.getString("fname");
-            String lname = resultSet.getString("lname");
+            String fname = resultSet.getString("first_name");
+            String lname = resultSet.getString("last_name");
+            String email = resultSet.getString("email");
+
             int id = resultSet.getInt("user_id");
             String name = fname + " " + lname;
-
-
-            //userModel = new UserModel(id, fname, lname, username, password); //Uncomment this when working on it. !!!
             resultSet.close();
             statement.close();
+
+            String qActivityData = "SELECT * FROM user_activity_data WHERE user_id = '" + id + "'";
+            Statement activityStatement = connection.createStatement();
+            ResultSet activityResultSet = activityStatement.executeQuery(qActivityData);
+
+            try {
+                while (activityResultSet.next()) {
+                    activity = activityResultSet.getInt("activity_id"); // here for debugging
+                    ActivityList.add(activity);
+                }
+            }
+            catch(SQLException e)
+            {            e.printStackTrace();
+            }
+
+            userModel = new UserModel(id, fname, lname, username, password, email, ActivityList); //Uncomment this when working on it. !!!
+
 //        preparedStatement.close();
             return userModel;
         } else {
@@ -96,7 +113,7 @@ public class MySQLdb {
      * @return
      * @throws SQLException
      */
-    public Boolean register(String username, String password, String firstName, String lastName, List<Integer> activity_list) throws SQLException {
+    public Boolean register(String username, String password, String firstName, String lastName, String email, List<Integer> activity_list) throws SQLException {
         UserModel userModel = null;
 
 
@@ -127,7 +144,7 @@ public class MySQLdb {
             }
 
             id++; // adds one to the last ID
-            String qLogin = "INSERT INTO user_info (user_id, first_name, last_name, username, password) VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + username + "', '" + password + "')";
+            String qLogin = "INSERT INTO user_info (user_id, first_name, last_name, username, password, email) VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + username + "', '" + password + "', '" + email +"')";
             Statement statement = connection.createStatement();
             try {
                 int resultSet = statement.executeUpdate(qLogin);

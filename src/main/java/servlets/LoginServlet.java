@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 
             String file = (String) session.getAttribute("file");
 
-            if(Objects.equals(file, "index.jsp")){file = "home.jsp";}
+          //  if(Objects.equals(file, "index.jsp")){file = "home.jsp";}
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);
