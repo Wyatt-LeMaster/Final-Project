@@ -1,9 +1,9 @@
 /**
  *
- *  JSP Assignment 2
+ *
  *  Wyatt LeMaster
  *  5/2/2023
- *  servlet calls database to fetch book list object
+ *  servlet calls database to fetch activities list object
  *
  *
  */
@@ -12,9 +12,6 @@
 package servlets;
 
 import models.ActivityModel;
-import models.BookModel;
-import models.TopicModel;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,15 +22,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
 
 @WebServlet(name = "FetchActivitiesServlet", value = "/FetchActivitiesServlet")
 public class FetchActivitiesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      //  doPost(request, response);
+      //  doPost(request, response); dont delete this
         int Activity = 999;
-        String Book_name = "";
         HttpSession session = request.getSession();
         MySQLdb db = MySQLdb.getInstance();
         if (session != null) {
@@ -48,19 +43,11 @@ public class FetchActivitiesServlet extends HttpServlet {
                 List<ActivityModel> ActivityModel = db.fetchActivities(Activity);
                 request.setAttribute("list_of_activities", ActivityModel);
 
-
-                //List<TopicModel> TopicModelList = db.fetchTopic(999);
-                // request.setAttribute("list_of_Topics", TopicModelList);
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
-
-            //String file = (String) session.getAttribute("file");
-
-            // if(Objects.equals(file, "index.jsp")){file = "findAFriend.jsp";}
-
+            // this is almost certainly the wrong way to do this. but it works right now
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
             requestDispatcher.forward(request, response);
 
@@ -72,7 +59,6 @@ public class FetchActivitiesServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int Activity = 999;
-        String Book_name = "";
         HttpSession session = request.getSession();
         MySQLdb db = MySQLdb.getInstance();
         if (session != null) {
@@ -83,36 +69,24 @@ public class FetchActivitiesServlet extends HttpServlet {
                 Activity = Integer.parseInt(request.getParameter("Activity"));
             }
 
-
-
-
             try {
                 List<ActivityModel> ActivityModel = db.fetchActivities(Activity);
                 request.setAttribute("list_of_activities", ActivityModel);
 
 
-                //List<TopicModel> TopicModelList = db.fetchTopic(999);
-               // request.setAttribute("list_of_Topics", TopicModelList);
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
 
-
+            // sends you back to whatever file you requested from.
             String file = (String) session.getAttribute("file");
-
-           // if(Objects.equals(file, "index.jsp")){file = "findAFriend.jsp";}
-
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);
 
 
         }
-
-
-
-
     }
 }
 
