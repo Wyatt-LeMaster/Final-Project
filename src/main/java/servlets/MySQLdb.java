@@ -288,20 +288,27 @@ public class MySQLdb {
 
     public List<GroupModel> recommendGroups(UserModel user) throws SQLException {
         List<GroupModel> groupList = new ArrayList<>();
-        String qGetTopics = "SELECT g.name FROM hobbyhelper.groups AS g, hobbyhelper.activities AS a "
+        String qGetTopics = "SELECT g.name, g.group_id FROM hobbyhelper.groups AS g, hobbyhelper.activities AS a "
             + "WHERE g.activity_id = a.activityID "
             + "AND a.activityID IN "
             + "(SELECT activity_id FROM hobbyhelper.user_activity_data WHERE user_id = '" + user.getUser_id() + "')";
-        PreparedStatement preparedStatement = connection.prepareStatement(qGetTopics);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        while(resultSet.next()) {
-            String group_name = resultSet.getString("name");
-            GroupModel group = new GroupModel(group_name);
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(qGetTopics);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String group_name = resultSet.getString("name");
+                int group_id = resultSet.getInt("group_id");
+                GroupModel group = new GroupModel(group_name, group_id);
 
-            groupList.add(group);
+                groupList.add(group);
+            }
+            resultSet.close();
+            preparedStatement.close();
+
         }
-        resultSet.close();
-        preparedStatement.close();
+        catch(SQLException e){
+            System.out.println(e);
+        }
 
         return groupList;
     }

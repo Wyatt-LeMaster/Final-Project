@@ -74,7 +74,7 @@
                         <li class="nav-item"><a class="nav-link " href="index.jsp">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Login.jsp">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="FetchActivitiesServlet" action="FetchActivitiesServlet" method="post" onclick="return validate()">Register </a></li>
-                        <li class="nav-item"><a class="nav-link" href="register.jsp">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="LogoutServlet">Logout</a></li>
                     </ul>
 
 
@@ -117,6 +117,8 @@
                     </tr>
                     <c:forEach var="each_group" items="${list_of_groups}">
                         <tr>
+                            <td><input type="checkbox" id="${each_group.getGroup_id()}" name="Checkbox ${each_group.getGroup_id()}" value="${each_group.getGroup_id()}"></td>
+                            <td>${each_group.getGroup_id()}</td>
                             <td>${each_group.getName()}</td>
 
                         </tr>
