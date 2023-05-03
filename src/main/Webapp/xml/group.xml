@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Groups>
+	<!-- Baseball Club -->
+	<Group GID="G001">
+	<name>Baseball Club</name>
+	<Description>Baseball Club is hosting open field games</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Basketball Club -->
+	<Group GID="G002">
+	<name>Basketball Club</name>
+	<Description>Basketball Club is hosting pick up games</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	
+	<!-- Bass Fishing Club -->
+	<Group GID="G003">
+	<name>Bass Fishing Club</name>
+	<Description>Bass Fishing Club is hosting a fishing expedition</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Clay Shooting Club -->
+	<Group GID="G004">
+	<name>Clay Shooting Club</name>
+	<Description>Clay Shooting Club is hosting target pratice</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Climbing Club -->
+	<Group GID="G005">
+	<name>Climbing Club</name>
+	<Description>Climbing is hosting mountain climbing</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Cycling Club -->
+	<Group GID="G006">
+	<name>Cycling Club</name>
+	<Description>Cycling Club is hosting a marathon</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Field Hockey Club -->
+	<Group GID="G007">
+	<name>Field Hockey Club</name>
+	<Description>Field Hockey Club is hosting a game</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Golf Club -->
+	<Group GID="G008">
+	<name>Golf Club</name>
+	<Description>Golf Club is hosting golf tournament</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Ice Hockey Club -->
+	<Group GID="G009">
+	<name>Ice Hockey Club</name>
+	<Description>Ice Hockey Club is hosting Ice Hockey practice</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Lacrosse Club -->
+	<Group GID="G010">
+	<name>Lacrosse Club</name>
+	<Description>Lacrosse Club is hosting</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Powerlifting Club -->
+	<Group GID="G011">
+	<name>Powerlifting Club</name>
+	<Description>Powerlifting Club is hosting</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Rowing Club -->
+	<Group GID="G012">
+	<name>Rowing Club</name>
+	<Description>Rowing Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Rugby Club -->
+	<Group GID="G013">
+	<name>Rugby Club</name>
+	<Description>Rugby Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Sailing Club -->
+	<Group GID="G014">
+	<name>Sailing Club</name>
+	<Description>Sailing Club is hosting a fishing expedition</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Soccer Club -->
+	<Group GID="G015">
+	<name>Soccer Club</name>
+	<Description>Soccer Club is hosting</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Softball Club -->
+	<Group GID="G016">
+	<name>Softball Club</name>
+	<Description>Softball Club is hosting</Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Swimming Club -->
+	<Group GID="G017">
+	<name>Swimming Club</name>
+	<Description>Swimming Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Team Handball Club -->
+	<Group GID="G018">
+	<name>Team Handball Club</name>
+	<Description>Team Handball Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Tennis Club -->
+	<Group GID="G019">
+	<name>Tennis Club</name>
+	<Description>Tennis Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Ultimate Frisbee Club -->
+	<Group GID="G020">
+	<name>Ultimate Frisbee Club</name>
+	<Description>Ultimate Frisbee Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Volleyball Club -->
+	<Group GID="G021">
+	<name>Volleyball Club</name>
+	<Description>Volleyball Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Waterpolo Club -->
+	<Group GID="G022">
+	<name>Waterpolo Club</name>
+	<Description>Waterpolo Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Waterski Club -->
+	<Group GID="G023">
+	<name>Waterski Club</name>
+	<Description>Waterski Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+	<!-- Wrestling Club -->
+	<Group GID="G024">
+	<name>Wrestling Club</name>
+	<Description>Wrestling Club is hosting </Description>
+	<Meeting> Monday/Thursday  5pm </Meeting>
+	</Group>
+	
+</Groups>
