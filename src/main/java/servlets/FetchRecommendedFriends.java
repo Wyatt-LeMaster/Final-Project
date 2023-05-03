@@ -10,10 +10,6 @@
 
 
 package servlets;
-
-import models.ActivityModel;
-import models.BookModel;
-import models.TopicModel;
 import models.UserModel;
 
 import javax.servlet.RequestDispatcher;
@@ -26,15 +22,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Objects;
 
 @WebServlet(name = "FetchRecommendedFriends", value = "/FetchRecommendedFriends")
 public class FetchRecommendedFriends extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          doPost(request, response);
-
-
     }
 
 
