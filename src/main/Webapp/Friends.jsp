@@ -72,7 +72,7 @@
                 </a>
 
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="home.jsp" class="nav-link " aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="findAFriend.jsp" class="nav-link " aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="register.jsp" class="nav-link" aria-current="page">register</a></li>
                     <li class="nav-item"><a href="ReserveNavServlet" action="ReserveNavServlet" method="post" onclick="return validate()" class="nav-link active" aria-current="page">Reservations</a></li>
 

@@ -59,7 +59,7 @@ public class FetchActivitiesServlet extends HttpServlet {
 
             //String file = (String) session.getAttribute("file");
 
-            // if(Objects.equals(file, "index.jsp")){file = "home.jsp";}
+            // if(Objects.equals(file, "index.jsp")){file = "findAFriend.jsp";}
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
             requestDispatcher.forward(request, response);
@@ -102,7 +102,7 @@ public class FetchActivitiesServlet extends HttpServlet {
 
             String file = (String) session.getAttribute("file");
 
-           // if(Objects.equals(file, "index.jsp")){file = "home.jsp";}
+           // if(Objects.equals(file, "index.jsp")){file = "findAFriend.jsp";}
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);

@@ -47,10 +47,13 @@
                         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Login.jsp">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="FetchActivitiesServlet" action="FetchActivitiesServlet" method="post" onclick="return validate()">Register </a></li>
-                        <li class="nav-item"><a class="nav-link" href="register.jsp">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="LogoutServlet">Logout</a></li>
                     </ul>
                 </div>
+                <p ><h2 style="color:White; font-family: Verdana "><%=message%></h2></p>
+
             </div>
+
         </nav>
         <!-- Page content-->
         <div class="container mt-5">
@@ -127,7 +130,7 @@
                         <div class="card-header">Find Friends!</div>
                         <div class="card-body">
                             <div class="input-group">
-                                <a href="home.jsp">
+                                <a href="findAFriend.jsp">
                                 <button class="btn btn-primary" id="button-search" type="button">Go!</button>
                                 </a>
                             </div>
@@ -139,18 +142,9 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">Web Design</a></li>
-                                        <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">JavaScript</a></li>
-                                        <li><a href="#!">CSS</a></li>
-                                        <li><a href="#!">Tutorials</a></li>
-                                    </ul>
+                                    <a href="findAFriend.jsp">
+                                        <button class="btn btn-primary" id="button-Group" type="button">Go!</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

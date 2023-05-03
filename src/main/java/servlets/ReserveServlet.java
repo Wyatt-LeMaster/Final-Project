@@ -70,7 +70,7 @@ public class ReserveServlet extends HttpServlet {
         }
         else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("Login.jsp");
-            session.setAttribute("file","home.jsp");
+            session.setAttribute("file","findAFriend.jsp");
             request.setAttribute("error", "Passwords must match!");
             requestDispatcher.forward(request, response);
         }
