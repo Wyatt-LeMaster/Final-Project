@@ -1,4 +1,13 @@
 <%@ page import="models.UserModel" %>
+<%@ page import="javax.xml.parsers.DocumentBuilderFactory" %>
+<%@ page import="javax.xml.parsers.DocumentBuilder" %>
+<%@ page import="org.w3c.dom.Document" %>
+<%@ page import="org.w3c.dom.NodeList" %>
+<%@ page import="org.w3c.dom.Node" %>
+<%@ page import="org.w3c.dom.Element" %>
+<%@ page import="java.io.File" %>
+<%@ page import="javax.xml.parsers.ParserConfigurationException" %>
+<%@ page import="org.xml.sax.SAXException" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -22,6 +31,25 @@
     else {
         message = "logged out";
     }
+%>
+<%
+    // Get the XML file and its contents
+    File xmlFile = new File("src/main/Webapp/xml/group.xml"); // **** MIGHT HAVE TO CHANGE PATH ****
+    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+    DocumentBuilder db = null;
+    try {
+        db = dbf.newDocumentBuilder();
+    } catch (ParserConfigurationException e) {
+        throw new RuntimeException(e);
+    }
+    Document d = null;
+    try {
+        d = db.parse(xmlFile);
+    } catch (SAXException e) {
+        throw new RuntimeException(e);
+    }
+    d.getDocumentElement().normalize();
+    NodeList groupsNL = d.getElementsByTagName("Group");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +107,27 @@
                             <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.</p>
                             <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
                         </section>
+                    </article>
+                    <!-- Group content -->
+                    <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <h2 class="fw-bolder mb-4 mt-5">Current Hobby Helper Groups</h2>
+                            <!-- Post meta content-->
+                        </header>
+                        <%
+                            // Loop through each group and display it and its description
+                            for (int i = 0; i < groupsNL.getLength(); i++) {
+                                Node n = groupsNL.item(i);
+                                Element e = (Element) n;
+                        %>
+                        <section class="mb-5">
+                            <p class="fs-5 mb-4"><%=e.getElementsByTagName("name").item(0).getTextContent()%>: <%=e.getElementsByTagName("Description").item(0).getTextContent()%></p>
+                        </section>
+                        <%
+                            }
+                        %>
                     </article>
                     <!-- Comments section-->
                     <section class="mb-5">
