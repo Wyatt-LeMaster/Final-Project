@@ -118,7 +118,7 @@
             <form action ="FetchRecommendedFriends" method="post">
                 <div class="form-floating">
                    <!-- <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>-->
-                    <input type="submit" value="Reserve" />
+                    <input type="submit" value="Find" />
                 </div>
             </form>
         </div>
@@ -130,17 +130,17 @@
             <div class="container px-5">
             <table>
                     <tr>
-                        <th>Book ID </th>
-                        <th>Book Name </th>
-                        <th>Author Name </th>
-                        <th>Book availability </th>
+                        <th>Friend name </th>
+                        <th>email </th>
+                        <th># of activities shared  </th>
 
                     </tr>
                 <c:forEach var="each_friend" items="${list_of_friends}">
                     <tr>
-                        <td>${each_friend.getFname()}</td>
-                        <td>${each_friend.getLname()}</td>
+                        <td>${each_friend.getFname()}, ${each_friend.getLname()}</td>
+
                         <td>${each_friend.getEmail()}</td>
+                        <td>${each_friend.getActivity_list().size()}</td>
 
                     </tr>
                 </c:forEach>
