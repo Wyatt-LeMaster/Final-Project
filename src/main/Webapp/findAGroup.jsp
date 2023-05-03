@@ -44,7 +44,7 @@
     <%
         boolean isLoggedIn = false;
         UserModel user = null;
-        session.setAttribute("file", "findAFriend.jsp");
+        session.setAttribute("file", "findAGroup.jsp");
         try {
             isLoggedIn = (boolean) session.getAttribute("loggedIn");
         }
