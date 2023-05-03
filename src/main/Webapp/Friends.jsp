@@ -49,12 +49,12 @@
 
         %>
 
-    <link href="<c:url value="sign-in.css" />" rel="stylesheet">
-    <link href="<c:url value="headers.css" />" rel="stylesheet">
-    <link href="<c:url value="dropdowns.css" />" rel="stylesheet">
+    <link href="<c:url value="css/sign-in.css" />" rel="stylesheet">
+    <link href="<c:url value="css/headers.css" />" rel="stylesheet">
+    <link href="<c:url value="css/dropdowns.css" />" rel="stylesheet">
     <link href="headers.css" rel="stylesheet">
-    <link href="<c:url value="bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="Style.css" />" rel="stylesheet">
+    <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="css/Style.css" />" rel="stylesheet">
     <title>Sessions and Cookies</title>
 
     <p></p>

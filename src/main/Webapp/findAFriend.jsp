@@ -75,7 +75,7 @@
                         <li class="nav-item"><a class="nav-link " href="index.jsp">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="Login.jsp">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="FetchActivitiesServlet" action="FetchActivitiesServlet" method="post" onclick="return validate()">Register </a></li>
-                        <li class="nav-item"><a class="nav-link" href="register.jsp">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="LogoutServlet" action="LogoutServlet" method="post">Logout</a></li>
                     </ul>
 
 
@@ -92,23 +92,7 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Find a friend</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-<!--
-            <form action="FetchBookServlet" method="post" onsubmit="return validate()">
-                <h1 class="h3 mb-3 fw-normal">Search</h1>
 
-                <select name="topic_id">
-                    <option value="999">All</option>
-                    <c:forEach var="each_topic" items="${list_of_Topics}">
-
-                        <option value="${each_topic.getTopic_id()}">${each_topic.getTopic_name()}</option>
-
-                    </c:forEach>
-                </select>
-                <input type="submit" value="Filter" />
-
-                <input type="Button" value="Reserve Book" action="ReserveNavServlet" onclick="document.location='ReserveNavServlet'"/>
-            </form>
--->
         </div>
     </div>
 
@@ -116,7 +100,6 @@
         <div class="container px-5">
             <form action ="FetchRecommendedFriends" method="post">
                 <div class="form-floating">
-                   <!-- <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>-->
                     <input type="submit" value="Find" />
                 </div>
             </form>
@@ -144,17 +127,13 @@
 
                     </tr>
                 </c:forEach>
+                <p>${error}</p>
                 </table>
 
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-<p>${error}</p>
 
 </body>
 
