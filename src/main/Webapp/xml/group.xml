@@ -7,30 +7,30 @@
     <!-- Baseball Club -->
     <Group GID="G001">
         <name>Baseball Club</name>
-        <Description>Baseball Club is hosting open field games</Description>
-        <Meeting> Monday/Thursday  5pm </Meeting>
+        <Description>We are a baseball team that competes in the NCBA against other collegiate baseball teams. We are currently in the NCBA Division I South Atlantic West division. We hold tryouts to determine the roster in the first two weeks of the fall semester. We would love to have anyone with a love of baseball to come and tryout. Please follow us on Instagram or Twitter for up-to-date information on the team.</Description>
+        <Meeting>Monday/Wednesday/Thursday 6:00pm-8:00pm</Meeting>
     </Group>
 
     <!-- Basketball Club -->
     <Group GID="G002">
         <name>Basketball Club</name>
-        <Description>Basketball Club is hosting pick up games</Description>
-        <Meeting> Monday/Thursday  5pm </Meeting>
+        <Description>The goal of the AUBCT is to provide students the opportunity to compete on an organized basketball team against other collegiate club basketball teams across the country.  This will provide an environment for basketball players to continue competing, build friendships, and learn about the game of basketball. We will strive to promote sportsmanship and a competitive spirit for people with a love for basketball. We will seek to serve one another as we sacrifice the wants of each individual for the good of the team and University we represent. We compete in the National Club Basketball Association (NCBBA) and in our first 2 seasons we have won our Region each year, ending the season ranked 16 in the national poll our first year and ranked 13 in this years’ poll, with our highest ranking being 6th in the country. This past year we also won the Andrew Sun Invitational Tournament at Florida State University after beating teams such as Clemson, Florida State, and Miami. We are looking to continue this success and be even more competitive in the years to come by selecting a team of guys who love basketball and love to compete. As a team, we are looking forward to the new group of guys this coming fall and spring as we have a lot of players on our team from last year graduating. </Description>
+        <Meeting>Sunday/Monday/Wednesday Practice Times are still being determined for the 2022-2023 school year. Most likely 2 practices at night and one in the afternoon. </Meeting>
     </Group>
 
 
     <!-- Bass Fishing Club -->
     <Group GID="G003">
         <name>Bass Fishing Club</name>
-        <Description>Bass Fishing Club is hosting a fishing expedition</Description>
-        <Meeting> Monday/Thursday  5pm </Meeting>
+        <Description>The purpose of this club is to provide student bass anglers the chance to compete in inter/intra-collegiate competition; to create campus-wide awareness of bass fishing in general as a popular past-time and sport. For more information about joining the club please visit our facebook page, instagram, or reach out to our President Carson Maddux via email (cjm0109@auburn.edu).</Description>
+        <Meeting> Wednesdays 7:00pm </Meeting>
     </Group>
 
     <!-- Clay Shooting Club -->
     <Group GID="G004">
         <name>Clay Shooting Club</name>
-        <Description>Clay Shooting Club is hosting target pratice</Description>
-        <Meeting> Monday/Thursday  5pm </Meeting>
+        <Description>We are a co-ed competitive clay shooting team, mainly competing in American skeet, American trap and sporting clays. Our goal is to give Auburn students the opportunity to grow in skill and character in a safe, strong team environment, and to encourage young people in shooting sports. Safety, leadership, sportsmanship and perseverance are qualities emphasized on our team. *Practice location is Dixie Trap and Gun Club in Matthews</Description>
+        <Meeting> Sundays-Fall Saturdays-Spring 10:00am </Meeting>
     </Group>
 
     <!-- Climbing Club -->
