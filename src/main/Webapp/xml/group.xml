@@ -1,11 +1,13 @@
-<!-- Author: Derius
-             name element added by Mary
-     Contents: The more text-heavy attributes of Groups
-               GID refers to ID of group in DB -->
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Author: Derius
+            name element added by Mary
+    Contents: The more text-heavy attributes of Groups
+              GID refers to ID of group in DB -->
+<!-- Baseball Club -->
 <Groups>
     <!-- Baseball Club -->
     <Group GID="G001">
+        <id>1</id>
         <name>Baseball Club</name>
         <Description>Baseball Club is hosting open field games</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -13,6 +15,7 @@
 
     <!-- Basketball Club -->
     <Group GID="G002">
+        <id>2</id>
         <name>Basketball Club</name>
         <Description>Basketball Club is hosting pick up games</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -21,6 +24,7 @@
 
     <!-- Bass Fishing Club -->
     <Group GID="G003">
+        <id>3</id>
         <name>Bass Fishing Club</name>
         <Description>Bass Fishing Club is hosting a fishing expedition</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -28,6 +32,7 @@
 
     <!-- Clay Shooting Club -->
     <Group GID="G004">
+        <id>4</id>
         <name>Clay Shooting Club</name>
         <Description>Clay Shooting Club is hosting target pratice</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -35,6 +40,7 @@
 
     <!-- Climbing Club -->
     <Group GID="G005">
+        <id>5</id>
         <name>Climbing Club</name>
         <Description>Climbing is hosting mountain climbing</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -42,6 +48,7 @@
 
     <!-- Cycling Club -->
     <Group GID="G006">
+        <id>6</id>
         <name>Cycling Club</name>
         <Description>Cycling Club is hosting a marathon</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -49,6 +56,7 @@
 
     <!-- Field Hockey Club -->
     <Group GID="G007">
+        <id>7</id>
         <name>Field Hockey Club</name>
         <Description>Field Hockey Club is hosting a game</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -56,6 +64,7 @@
 
     <!-- Golf Club -->
     <Group GID="G008">
+        <id>8</id>
         <name>Golf Club</name>
         <Description>Golf Club is hosting golf tournament</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -63,6 +72,7 @@
 
     <!-- Ice Hockey Club -->
     <Group GID="G009">
+        <id>9</id>
         <name>Ice Hockey Club</name>
         <Description>Ice Hockey Club is hosting Ice Hockey practice</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -70,6 +80,7 @@
 
     <!-- Lacrosse Club -->
     <Group GID="G010">
+        <id>10</id>
         <name>Lacrosse Club</name>
         <Description>Lacrosse Club is hosting</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -77,6 +88,7 @@
 
     <!-- Powerlifting Club -->
     <Group GID="G011">
+        <id>11</id>
         <name>Powerlifting Club</name>
         <Description>Powerlifting Club is hosting</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -84,6 +96,7 @@
 
     <!-- Rowing Club -->
     <Group GID="G012">
+        <id>12</id>
         <name>Rowing Club</name>
         <Description>Rowing Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -91,6 +104,7 @@
 
     <!-- Rugby Club -->
     <Group GID="G013">
+        <id>13</id>
         <name>Rugby Club</name>
         <Description>Rugby Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -98,6 +112,7 @@
 
     <!-- Sailing Club -->
     <Group GID="G014">
+        <id>14</id>
         <name>Sailing Club</name>
         <Description>Sailing Club is hosting a fishing expedition</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -105,6 +120,7 @@
 
     <!-- Soccer Club -->
     <Group GID="G015">
+        <id>15</id>
         <name>Soccer Club</name>
         <Description>Soccer Club is hosting</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -112,6 +128,7 @@
 
     <!-- Softball Club -->
     <Group GID="G016">
+        <id>16</id>
         <name>Softball Club</name>
         <Description>Softball Club is hosting</Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -119,6 +136,7 @@
 
     <!-- Swimming Club -->
     <Group GID="G017">
+        <id>17</id>
         <name>Swimming Club</name>
         <Description>Swimming Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -126,6 +144,7 @@
 
     <!-- Team Handball Club -->
     <Group GID="G018">
+        <id>18</id>
         <name>Team Handball Club</name>
         <Description>Team Handball Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -133,6 +152,7 @@
 
     <!-- Tennis Club -->
     <Group GID="G019">
+        <id>19</id>
         <name>Tennis Club</name>
         <Description>Tennis Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -140,6 +160,7 @@
 
     <!-- Ultimate Frisbee Club -->
     <Group GID="G020">
+        <id>20</id>
         <name>Ultimate Frisbee Club</name>
         <Description>Ultimate Frisbee Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -147,6 +168,7 @@
 
     <!-- Volleyball Club -->
     <Group GID="G021">
+        <id>21</id>
         <name>Volleyball Club</name>
         <Description>Volleyball Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -154,6 +176,7 @@
 
     <!-- Waterpolo Club -->
     <Group GID="G022">
+        <id>22</id>
         <name>Waterpolo Club</name>
         <Description>Waterpolo Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -161,6 +184,7 @@
 
     <!-- Waterski Club -->
     <Group GID="G023">
+        <id>23</id>
         <name>Waterski Club</name>
         <Description>Waterski Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>
@@ -168,6 +192,7 @@
 
     <!-- Wrestling Club -->
     <Group GID="G024">
+        <id>24</id>
         <name>Wrestling Club</name>
         <Description>Wrestling Club is hosting </Description>
         <Meeting> Monday/Thursday  5pm </Meeting>

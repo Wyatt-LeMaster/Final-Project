@@ -116,14 +116,14 @@
                         <th>Friend name </th>
                         <th>email </th>
                         <th># of activities shared  </th>
-
                     </tr>
-                <c:forEach var="each_friend" items="${list_of_friends}">
+                <c:forEach var="each_friend" items="${list_of_friends}"><jsp:useBean id="user" scope="session" type="models.UserModel"/>
+
                     <tr>
                         <td>${each_friend.getFname()}, ${each_friend.getLname()}</td>
 
                         <td>${each_friend.getEmail()}</td>
-                        <td>${each_friend.getActivity_list().size()}</td>
+                        <td> ${each_friend.getActivity_list().size()}</td>
 
                     </tr>
                 </c:forEach>
