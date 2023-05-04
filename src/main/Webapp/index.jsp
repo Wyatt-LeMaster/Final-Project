@@ -237,15 +237,15 @@
                                     Element e = (Element) n;
                             %>
                             <section class="mb-5"> <!--Need to create a series of buttons that can navigate to the navigate to the -->
-                                <a href="GroupPageTemplate.jsp" >
+                                <form method ="post" action="CreateGroupPageServlet">
                                     <p class="fs-5 mb-4"><%=e.getElementsByTagName("name").item(0).getTextContent()%></p>
-                                    <button class="btn btn-primary" id="button <%=e.getElementsByTagName("id").item(0).getTextContent()%>" type="button">Go!</button>
-
-                                </a>
-                            </section>
-                            <%
+                                    <button class="btn btn-primary" name="buttonAction"  value="<%=e.getElementsByTagName("id").item(0).getTextContent()%>" id="<%=e.getElementsByTagName("id").item(0).getTextContent()%>" type="submit">Go!</button>
+                                <%
                                 }
-                            %>
+                                %>
+                                </form>
+                            </section>
+
                         </article>
                         </div>
                     </div>

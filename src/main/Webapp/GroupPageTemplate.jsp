@@ -35,12 +35,18 @@
 <!--Merry added this -->
 <%
 
-  //int groupID= (int) request.getAttribute("group");
   // Get the XML file and its contents
   File xmlFile = new File("C:\\Users\\wyatt\\Box\\Spring 2023\\Web app\\FinalProject\\ProjectFiles\\HobbyHelper1\\src\\main\\Webapp\\xml\\group.xml"); // **** MIGHT HAVE TO CHANGE PATH ****
   DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
   DocumentBuilder db = null;
+  int groupId = 0;
+  String temp;
+
   try {
+    //groupId = (int) request.getAttribute("group");
+    temp = (String)request.getAttribute("group");
+    groupId = Integer.parseInt(temp);
+
     db = dbf.newDocumentBuilder();
   } catch (ParserConfigurationException e) {
     throw new RuntimeException(e);
@@ -97,21 +103,24 @@
         <!-- Post header-->
         <header class="mb-4">
           <!-- Post title-->
-          <h1 class="fw-bolder mb-1">Welcome to the baseball group page!  </h1>
+          <%
+            // Loop through each group and display it and its description
+
+              Node n = groupsNL.item(groupId-1);
+              Element e = (Element) n;
+
+          %>
+          <h1 class="fw-bolder mb-1">Welcome to the <%=e.getElementsByTagName("name").item(0).getTextContent()%> group page!  </h1>
+          <p class="fs-5 mb-4">Meetings: <%=e.getElementsByTagName("Meeting").item(0).getTextContent()%></p>
+
           <!-- Post meta content-->
 
         </header>
         <!-- Preview image figure-->
-        <figure class="mb-4"><img class="img-fluid rounded" src="assets/baseball.jpeg" alt="..." /></figure>
+        <figure class="mb-4"><img class="img-fluid rounded" src="assets/<%=e.getElementsByTagName("id").item(0).getTextContent()%>.jpeg" alt="..." /></figure>
         <!-- Post content-->
         <section class="mb-5">
-          <p class="fs-5 mb-4">Everyone has hobbies and everyone has friends but not everyone is lucky enough to have friends that share their hobbies!</p>
-          <p class="fs-5 mb-4">That is where HobbyHelper come in to help! Let us match you with future friends at Auburn University that you can safely contact via their university email!</p>
-          <p class="fs-5 mb-4">We hope that you are now able to enjoy your new-found friendships while participating in your favorite hobbies!</p>
-          <!--<h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
-          <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.</p>
-          <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
-     -->
+          <p class="fs-5 mb-4"><%=e.getElementsByTagName("Description").item(0).getTextContent()%></p>
         </section>
       </article>
       <!-- Group content -->
@@ -130,4 +139,5 @@
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 </body>
+
 </html>

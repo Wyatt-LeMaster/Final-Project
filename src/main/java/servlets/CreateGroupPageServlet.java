@@ -31,7 +31,7 @@ public class CreateGroupPageServlet extends HttpServlet {
         HttpSession session = request.getSession();
         MySQLdb db = MySQLdb.getInstance();
         List<ActivityModel> ActivityModelList = null;
-        String temp = null;
+        String temp = "";
         String check = "";
         List<String> Group = new ArrayList<String>();
         try {
@@ -48,27 +48,24 @@ public class CreateGroupPageServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        for (ActivityModel a: ActivityModelList) {
-            check = "button " + a.getActivityID();
+
+            check = "buttonAction";
             temp = request.getParameter(check);
             if (temp != null) {
                 request.setAttribute("group", temp);
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("CreateGroupPage.jsp");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("GroupPageTemplate.jsp");
                 requestDispatcher.forward(request, response);
-
-            }
-
         }
 
 
 
 
+else {
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                requestDispatcher.forward(request, response);
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-            requestDispatcher.forward(request, response);
 
-
-
+            }
     }
 }
 
