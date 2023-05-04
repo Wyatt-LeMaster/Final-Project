@@ -1,10 +1,11 @@
 /**
+ * java - Wyatt LeMaster
  *
- *  JSP Assignment 2
- *  Wyatt LeMaster
- *  5/2/2023
- *  servlet sets session data to logout a user.
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
  *
+ * invalidates the session and sets the session attribute to logged out
  *
  */
 

@@ -1,3 +1,13 @@
+<!--
+* JSP - Wyatt LeMaster
+* XML - Mary Mitchell
+*
+* Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+* Hobby Helper semester project
+* 5/4/2023
+*
+-->
+
 <%@ page import="models.UserModel" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="javax.xml.parsers.DocumentBuilderFactory" %>
@@ -103,55 +113,46 @@
                         <figure class="mb-4"><img class="img-fluid rounded" src="assets/launch.jpeg" alt="..." /></figure>
                         <!-- Post content-->
                         <section class="mb-5">
-                            <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.</p>
-                            <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-                            <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
-                            <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
-                            <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.</p>
-                            <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
+                            <p class="fs-5 mb-4">Everyone has hobbies and everyone has friends but not everyone is lucky enough to have friends that share their hobbies!</p>
+                            <p class="fs-5 mb-4">That is where HobbyHelper can help! Let us match you with future friends at Auburn University that you can safely contact via their university email!</p>
+                            <p class="fs-5 mb-4">We hope that you are now able to enjoy your new-found friendships while participating in your favorite hobbies!</p>
+
                         </section>
                     </article>
                     <!-- Group content -->
 
-                    <!-- Comments section-->
                     <section class="mb-5">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <!-- Comment form-->
-                                <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
-                                <!-- Comment with nested comments-->
-                                <div class="d-flex mb-4">
-                                    <!-- Parent comment-->
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                                        <!-- Child comment 1-->
-                                        <div class="d-flex mt-4">
-                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                            <div class="ms-3">
-                                                <div class="fw-bold">Commenter Name</div>
-                                                And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                                            </div>
+
+                                <div class="container px-5">
+
+                                    <form action ="FetchActivitiesServlet" method="post">
+                                        <div class="form-floating">
+                                            View activities:
+
+                                            <input type="submit" value="Show Me!" />
                                         </div>
-                                        <!-- Child comment 2-->
-                                        <div class="d-flex mt-4">
-                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                            <div class="ms-3">
-                                                <div class="fw-bold">Commenter Name</div>
-                                                When you put money directly to a problem, it makes a good headline.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single comment-->
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                       niverse and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-                                    </div>
-                                </div>
+                                    </form>
+                            </div>
+                                <div class="overflow-scroll" style="max-height: 30vh;">
+                                <div class="container px-5">
+                                    <table>
+                                        <tr>
+                                            <th>Activity Name </th>
+
+
+                                        </tr>
+                                        <c:forEach var="each_activity" items="${list_of_activities}">
+                                            <tr>
+                                                <td>${each_activity.getName()}</td>
+
+                                            </tr>
+                                        </c:forEach>
+                                        <p>${error}</p>
+                                    </table>
+                        </div>
+                            </div>
                             </div>
                         </div>
                     </section>
@@ -171,7 +172,7 @@
                     </div>
                     <!-- Categories widget-->
                     <div class="card mb-4">
-                        <div class="card-header">Groups</div>
+                        <div class="card-header">Get a group recommendation!</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -184,28 +185,36 @@
                     </div>
                     <!-- Side widget-->
                     <div class="card mb-4">
-                        <div class="card-header">Side Widget</div>
+                        <div class="card-header"><h3 class="fw-bolder mb-4 mt-5">Explore our Hobby Helper Groups!</h3></div>
                         <div class="card-body"><article>
                             <!-- Post header-->
                             <header class="mb-4">
                                 <!-- Post title-->
-                                <h2 class="fw-bolder mb-4 mt-5">Current Hobby Helper Groups</h2>
+
                                 <!-- Post meta content-->
                             </header>
+                            <div class="overflow-scroll" style="max-height: 50vh;">
+
                             <%
                                 // Loop through each group and display it and its description
                                 for (int i = 0; i < groupsNL.getLength(); i++) {
                                     Node n = groupsNL.item(i);
                                     Element e = (Element) n;
                             %>
-                            <section class="mb-5">
-                                <p class="fs-5 mb-4"><%=e.getElementsByTagName("name").item(0).getTextContent()%>: <%=e.getElementsByTagName("Description").item(0).getTextContent()%></p>
-                            </section>
-                            <%
+                            <section class="mb-5"> <!--Need to create a series of buttons that can navigate to the navigate to the -->
+                                <form method ="post" action="CreateGroupPageServlet">
+                                    <p class="fs-5 mb-4"><%=e.getElementsByTagName("name").item(0).getTextContent()%>
+                                    <br><button class="btn btn-primary" name="buttonAction"  value="<%=e.getElementsByTagName("id").item(0).getTextContent()%>" id="<%=e.getElementsByTagName("id").item(0).getTextContent()%>" type="submit">Visit</button>
+                                    </p>
+                                            <%
                                 }
-                            %>
+                                %>
+                                </form>
+                            </section>
+
                         </article>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

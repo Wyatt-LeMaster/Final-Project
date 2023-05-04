@@ -1,14 +1,20 @@
 /**
  *
- *  JSP Assignment 2
- *  Wyatt LeMaster
- *  Emma Ingram
- *  5/2/2023
- *  Class connects to Database and submits queries for users and books.
+ * java - Wyatt, Emma
+ * SQL Wyatt, Emma, NanYang
  *
+ *
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
+ *
+ * This does the bulk of the work.
+ * It checks for valid login data.
+ * It checks fetches activities from database
+ * It fetches user data from database
+ * It fetches and filters users and groups to recommend to the user.
  *
  */
-
 
 package servlets;
 
@@ -50,6 +56,12 @@ public class MySQLdb {
     }
 
 
+    /**
+     *
+     * @param user_id
+     * @return the usermodel representing the user with the matching ID
+     * @throws SQLException
+     */
     public UserModel fetchUser(int user_id) throws SQLException {
         UserModel userModel = null;
         List<Integer> ActivityList = new ArrayList<Integer>();
@@ -66,7 +78,7 @@ public class MySQLdb {
             String email = resultSet.getString("email");
 
             int id = resultSet.getInt("user_id");
-            String name = fname + " " + lname;
+            String name = fname + " " + lname; // creates full name if needed
             resultSet.close();
             statement.close();
 
@@ -76,7 +88,7 @@ public class MySQLdb {
 
             try {
                 while (activityResultSet.next()) {
-                    activity = activityResultSet.getInt("activity_id"); // here for debugging
+                    activity = activityResultSet.getInt("activity_id");
                     ActivityList.add(activity);
                 }
             }
@@ -84,7 +96,7 @@ public class MySQLdb {
             {            e.printStackTrace();
             }
 
-            userModel = new UserModel(id, fname, lname, username, password, email, ActivityList); //Uncomment this when working on it. !!!
+            userModel = new UserModel(id, fname, lname, username, password, email, ActivityList);
 
 //        preparedStatement.close();
             return userModel;
@@ -131,7 +143,7 @@ public class MySQLdb {
 
             try {
                 while (activityResultSet.next()) {
-                    activity = activityResultSet.getInt("activity_id"); // here for debugging
+                    activity = activityResultSet.getInt("activity_id");
                     ActivityList.add(activity);
                 }
             }
@@ -139,7 +151,7 @@ public class MySQLdb {
             {            e.printStackTrace();
             }
 
-            userModel = new UserModel(id, fname, lname, username, password, email, ActivityList); //Uncomment this when working on it. !!!
+            userModel = new UserModel(id, fname, lname, username, password, email, ActivityList);
 
 //        preparedStatement.close();
             return userModel;
@@ -152,6 +164,7 @@ public class MySQLdb {
     /**
      *
      * accepts user data and inserts into database.
+     * it creates the user_id by getting the max id value and increasing it by 1
      *
      * @param username
      * @param password
@@ -218,10 +231,12 @@ public class MySQLdb {
 
     /**
      *
+     *  fetches all users but the requesting user from the database and then uses retainAll()
+     *  to trim down the users matched activities. if the user has no matched activities to the
+     *  requesting user they are discarded.
      *
-     *
-     * @param
-     * @return
+     * @param user
+     * @return list of matched users
      * @throws SQLException
      */
     public List<UserModel> recommendFriend(UserModel user) throws SQLException {
@@ -249,6 +264,12 @@ public class MySQLdb {
         return list;
     }
 
+    /**
+     * fetches all activities from the database
+     * @param activity_id_in
+     * @return list of activities
+     * @throws SQLException
+     */
     public List<ActivityModel> fetchActivities(int activity_id_in) throws SQLException {
         String qGetActivities = null;
         List<ActivityModel> list = new ArrayList<>();
@@ -286,6 +307,13 @@ public class MySQLdb {
         return list;
     }
 
+    /**
+     * Fetches groups that corresponds to the activities that user is interested in
+     *
+     * @param user
+     * @return
+     * @throws SQLException
+     */
     public List<GroupModel> recommendGroups(UserModel user) throws SQLException {
         List<GroupModel> groupList = new ArrayList<>();
         String qGetTopics = "SELECT g.name, g.group_id FROM hobbyhelper.groups AS g, hobbyhelper.activities AS a "

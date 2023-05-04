@@ -1,11 +1,12 @@
 /**
  *
- *  JSP Assignment 2
- *  Wyatt LeMaster
- *  5/2/2023
- *  servlet calls database to fetch book list object
+ * java - Wyatt LeMaster
  *
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
  *
+ * Calls the recommend friend method in the database class and returns the recommend friends
  */
 
 

@@ -1,18 +1,17 @@
 /**
  *
- *  JSP Assignment 2
- *  Wyatt LeMaster
- *  5/2/2023
- *  servlet logs in a user.
+ *  java - Wyatt LeMaster
  *
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
  *
+ * Login in the user and fills the session attribute with the users' data.
  */
 
 
 package servlets;
-
 import models.UserModel;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Objects;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -56,8 +54,6 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("loggedIn", true);
 
             String file = (String) session.getAttribute("file");
-
-          //  if(Objects.equals(file, "index.jsp")){file = "findAFriend.jsp";}
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(file);
             requestDispatcher.forward(request, response);

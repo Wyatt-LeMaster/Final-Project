@@ -1,10 +1,9 @@
 <!--
+* JSP - Wyatt LeMaster
 *
-*  JSP Assignment 2
-*  Wyatt LeMaster
-*  5/2/2023
-*  JSP to display the register page
-*
+* Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+* Hobby Helper semester project
+* 5/4/2023
 *
 -->
 
@@ -51,24 +50,24 @@
     <h1 class="h3 mb-3 fw-normal">Register</h1>
 
     <div class="form-floating">
-        <input id="username" name="username" type="text" class = "form-control" placeholder="username"/>
+        <input id="username" name="username" type="text" class = "form-control" placeholder="username" required/>
         <label for="username">Username</label>
     </div>
 
     <div class="form-floating">
-        <input id="email" name="email" type="text" class = "form-control" placeholder="email"/>
+        <input id="email" name="email" type="text" class = "form-control" placeholder="email" required/>
         <label for="email">email</label>
     </div>
 
     <div class="form-floating">
 
-        <input id="password" name="password" type="password" class = "form-control" placeholder="password"/>
+        <input id="password" name="password" type="password" class = "form-control" placeholder="password" required/>
         <label for="password">Password</label>
     </div>
 
     <div class="form-floating">
 
-        <input id="passwordCON" name="passwordCON" type="password" class = "form-control" placeholder="Password verify"/>
+        <input id="passwordCON" name="passwordCON" type="password" class = "form-control" placeholder="Password verify" required/>
         <label for="passwordCON">Password verify</label>
     </div>
 
@@ -77,13 +76,13 @@
 
     <div class="form-floating">
 
-        <input id="firstName" name="firstName" type="text" class = "form-control" placeholder="First Name"/>
+        <input id="firstName" name="firstName" type="text" class = "form-control" placeholder="First Name " required/>
         <label for="firstName">First name</label>
     </div>
 
     <div class="form-floating">
 
-        <input id="lastName" name="lastName" type="text" class = "form-control" placeholder="Last Name"/>
+        <input id="lastName" name="lastName" type="text" class = "form-control" placeholder="Last Name" required/>
         <label for="lastName">Last Name</label>
     </div>
 
@@ -112,10 +111,16 @@
                     </c:forEach>
                 </table>
 
+
             </div>
 
 
         </div>
+        <a  href="FetchActivitiesServlet" action="FetchActivitiesServlet" method="post" onclick="return validate()">
+
+        refresh Activities
+
+        </a>
     </div>
     <input class="w-100 btn btn-lg btn-primary"  type="submit" name="Login" value="Register" /> <br/> </br>
     <span id="error_msg"></span>

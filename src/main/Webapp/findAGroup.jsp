@@ -1,10 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: emmaingram
-  Date: 5/3/23
-  Time: 1:48 PM
-  To change this template use File | Settings | File Templates.
---%>
+<!--
+* JSP - Emma Ingram, Wyatt LeMaster
+*
+* Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+* Hobby Helper semester project
+* 5/4/2023
+*
+-->
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="models.UserModel" %>
@@ -44,9 +45,11 @@
     <%
         boolean isLoggedIn = false;
         UserModel user = null;
-        session.setAttribute("file", "findAGroup.jsp");
+
         try {
             isLoggedIn = (boolean) session.getAttribute("loggedIn");
+            session.setAttribute("file", "findAGroup.jsp");
+
         }
         catch(Exception e) {
 
@@ -87,9 +90,8 @@
 </main>
 
 <div class="px-4 pt-5 my-5 text-center border-bottom justify-content-center  flex-fill">
-    <h1 class="display-4 fw-bold text-body-emphasis">Find Your Group</h1>
+    <h1 class="display-4 fw-bold text-body-emphasis">Find Your recommended Group</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Find Your Group</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
         </div>
     </div>
@@ -98,7 +100,6 @@
         <div class="container px-5">
             <form action ="FetchRecommendedGroups" method="post">
                 <div class="form-floating">
-                    <!-- <input id="Res_Book_ID" name="Res_Book_ID" type="text" placeholder="Res_Book_ID"/> <br/>-->
                     <input type="submit" value="Find" />
                 </div>
             </form>
@@ -117,8 +118,12 @@
                     </tr>
                     <c:forEach var="each_group" items="${list_of_groups}">
                         <tr>
-                            <td><input type="checkbox" id="${each_group.getGroup_id()}" name="Checkbox ${each_group.getGroup_id()}" value="${each_group.getGroup_id()}"></td>
-                            <td>${each_group.getGroup_id()}</td>
+
+                            <td>
+                                <form method ="post" action="CreateGroupPageServlet">
+                                    <button type="submit "class="btn btn-primary" id="${each_group.getGroup_id()}" name="buttonAction" value="${each_group.getGroup_id()}"> Visit </button>
+                                </form>
+                            </td>
                             <td>${each_group.getName()}</td>
 
                         </tr>

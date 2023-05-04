@@ -1,10 +1,9 @@
 <!--
 *
-*  JSP Assignment 2
-*  Wyatt LeMaster
-*  5/2/2023
-*  JSP to display the reservation page. This page displays a users reservations
 *
+* Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+* Hobby Helper semester project
+* 5/4/2023
 *
 -->
 

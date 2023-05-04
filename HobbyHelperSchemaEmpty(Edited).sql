@@ -50,10 +50,10 @@ DROP TABLE IF EXISTS `groups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `groups` (
-  `group_id` varchar(10) NOT NULL,
+  `group_id` INT NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `category` int DEFAULT NULL,
-  `activity_id` varchar(10) DEFAULT NULL,
+  `activity_id` INT DEFAULT NULL,
   PRIMARY KEY (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -64,7 +64,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES ('G001','Baseball Club',0,'A001'),('G002','Basketball Club',0,'A002'),('G003','Bass Fishing Club',0,'A003'),('G004','Clay Shooting Club',0,'A004'),('G005','Climbing Club',0,'A005'),('G006','Cycling Club',0,'A006'),('G007','Field Hockey Club',0,'A007'),('G008','Golf Club',0,'A008'),('G009','Ice Hockey Club',0,'A009'),('G010','Lacrosse Club',0,'A010'),('G011','Powerlifting Club',0,'A011'),('G012','Rowing Club',0,'A012'),('G013','Rugby Club',0,'A013'),('G014','Sailing Club',0,'A014'),('G015','Soccer Club',0,'A015'),('G016','Softball Club',0,'A016'),('G017','Swimming Club',0,'A017'),('G018','Team Handball Club',0,'A018'),('G019','Tennis Club',0,'A019'),('G020','Ultimate Frisbee Club',0,'A020'),('G021','Volleyball Club',0,'A021'),('G022','Waterpolo Club',0,'A022'),('G023','Waterski Club',0,'A023'),('G024','Wrestling Club',0,'A024');
+INSERT INTO `groups` VALUES (1,'Baseball Club',5,1),(2,'Basketball Club',5,2),(3,'Bass Fishing Club',3,3),(4,'Clay Shooting Club',4,4),(5,'Climbing Club',2,5),(6,'Cycling Club',2,0),(7,'Field Hockey Club',4,7),(8,'Golf Club',5,8),(9,'Ice Hockey Club',5,9),(10,'Lacrosse Club',5,10),(11,'Powerlifting Club',2,11),(12,'Rowing Club',5,12),(13,'Rugby Club',5,13),(14,'Sailing Club',3,14),(15,'Soccer Club',5,15),(16,'Softball Club',5,16),(17,'Swimming Club',3,17),(18,'Team Handball Club',0,18),(19,'Tennis Club',5,19),(20,'Ultimate Frisbee Club',4,20),(21,'Volleyball Club',5,21),(22,'Waterpolo Club',3,22),(23,'Waterski Club',3,23),(24,'Wrestling Club',2,24);
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,6 +165,14 @@ CREATE TABLE `categories` (
   PRIMARY KEY (`activityID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`categoryID`, `category`, `activityID`, `activity`) 
 VALUES 
   ('2', 'strength', 5, 'Climbing'),
@@ -191,12 +199,5 @@ VALUES
   ('5', 'ball sports', 22, 'Waterpolo'),
   ('3', 'water sports', 23, 'Waterski'),
   ('2', 'strength', 24, 'Wrestling');
-
---
--- Dumping data for table `categories`
---
-
-LOCK TABLES `categories` WRITE;
-/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;

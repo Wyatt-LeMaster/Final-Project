@@ -1,3 +1,14 @@
+/**
+ * java - Wyatt LeMaster
+ *
+ *
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * represents an activity object
+ * 5/4/2023
+ *
+ */
+
 package models;
 
 public class ActivityModel {
