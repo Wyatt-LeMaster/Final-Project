@@ -19,16 +19,33 @@ public class UserModel {
 
     int user_id;
 
-    String fname, lname, username, password;
+    String fname, lname, username, password, email;
     List<Integer> activity_list = new ArrayList<Integer>();
 
 
-    public UserModel(int user_id, String fname, String lname, String username, String password, List<Integer> activity_list) {
+
+    public UserModel(int user_id, String fname, String lname, String username, String password, String email, List<Integer> activity_list) {
         this.user_id = user_id;
         this.fname = fname;
         this.lname = lname;
         this.username = username;
         this.password = password;
+        this.activity_list = activity_list;
+        this.email = email;
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Integer> getActivity_list() {
+        return activity_list;
+    }
+
+    public void setActivity_list(List<Integer> activity_list) {
         this.activity_list = activity_list;
     }
 
