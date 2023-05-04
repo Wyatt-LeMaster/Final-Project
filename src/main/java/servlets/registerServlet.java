@@ -1,10 +1,11 @@
 /**
+ * java - Wyatt LeMaster
  *
- *  JSP Assignment 2
- *  Wyatt LeMaster
- *  5/2/2023
- *  servlet collects user data from jsp and registers new user account
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
  *
+ * creates account for user. Checks for matching passwords and duplicate usernames
  *
  */
 
@@ -46,11 +47,6 @@ public class registerServlet extends HttpServlet {
         List<Integer> userActivities = new ArrayList<Integer>();
         try {
             ActivityModelList = db.fetchActivities(999);
-           // request.setAttribute("list_of_activities", ActivityModel);
-
-
-            //List<TopicModel> TopicModelList = db.fetchTopic(999);
-            // request.setAttribute("list_of_Topics", TopicModelList);
 
         }
         catch (SQLException e)
@@ -82,32 +78,31 @@ public class registerServlet extends HttpServlet {
             UserModel userModel = new UserModel(1, firstName, lastName, username, password, email, userActivities);
 
 
-
-            session.setAttribute("user", userModel);
-
-
             Boolean isSuccess = false;
             try {
                 isSuccess = db.register(username, password, firstName, lastName, email, userActivities);
+                userModel = db.doLogin(username, password);
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
 
-            if (isSuccess == false)
-            {
+            if (isSuccess == false)  // if the register fails
+            { // username error
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
                 request.setAttribute("error", "username already exists");
                 requestDispatcher.forward(request, response);
 
             }
-            else {
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+            else { // if the register works
+                session.setAttribute("user", userModel);
                 session.setAttribute("loggedIn", true);
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
                 request.setAttribute("login", true);
                 requestDispatcher.forward(request, response);
             }
         }
-        else {
+        else { // password error
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
             request.setAttribute("error", "Passwords must match!");
             requestDispatcher.forward(request, response);

@@ -1,3 +1,14 @@
+/**
+ * java - Wyatt LeMaster
+ *
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
+ *
+ *
+ * gets the correct group ID from button and sends that data to GroupTemplate.jsp to make a custom page for each group
+ *
+ */
 package servlets;
 
 import models.ActivityModel;

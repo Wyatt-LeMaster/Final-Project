@@ -1,10 +1,11 @@
 /**
+ * java - Wyatt LeMaster
  *
- *  JSP Assignment 2
- *  Emma Ingram
- *  5/3/2023
- *  Model for activity group
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
  *
+ * represents a group
  *
  */
 

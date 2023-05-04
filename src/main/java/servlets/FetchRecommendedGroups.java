@@ -1,11 +1,11 @@
 /**
+ *  java - Emma Ingram, Wyatt LeMaster
+*
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
  *
- *  JSP Assignment 2
- *  Emma Ingram
- *  5/3/2023
- *  servlet calls database to fetch groups
- *
- *
+ *  Calls the recommend group method in the database class and returns the recommend group
  */
 
 package servlets;

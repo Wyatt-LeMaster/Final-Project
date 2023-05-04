@@ -1,11 +1,11 @@
 /**
+ *java - Wyatt LeMaster
  *
+ * Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+ * Hobby Helper semester project
+ * 5/4/2023
  *
- *  Wyatt LeMaster
- *  5/2/2023
- *  servlet calls database to fetch activities list object
- *
- *
+ * Fetches the activities from the database and returns it as a list
  */
 
 
@@ -48,7 +48,8 @@ public class FetchActivitiesServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
-            // this is almost certainly the wrong way to do this. but it works right now
+            // This allows the user to see the activity list when they open the register page. Probably should be its
+            // own servlet
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
             requestDispatcher.forward(request, response);
 

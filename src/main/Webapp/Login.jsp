@@ -1,10 +1,10 @@
 <!--
 *
-*  JSP Assignment 2
-*  Wyatt LeMaster
-*  5/2/2023
-*  JSP to display Login page.
+* JSP - Wyatt LeMaster
 *
+* Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+* Hobby Helper semester project
+* 5/4/2023
 *
 -->
 

@@ -1,9 +1,9 @@
 <!--
+* JSP - Wyatt LeMaster, Emma Ingram
 *
-*
-*  Wyatt LeMaster
-*  5/2/2023
-*
+* Members Wyatt LeMaster, Emma Ingram, Derius Knight, Mary Mitchell, Nan Yang
+* Hobby Helper semester project
+* 5/4/2023
 *
 -->
 
@@ -92,12 +92,6 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Find a friend</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-
-        </div>
-    </div>
-
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <div class="container px-5">
             <form action ="FetchRecommendedFriends" method="post">
                 <div class="form-floating">
                     <input type="submit" value="Find" />
@@ -105,30 +99,55 @@
             </form>
         </div>
     </div>
+
+
     <p>${login}</p><br/>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
 
-        <div class="overflow-scroll" style="max-height: 30vh;">
 
             <div class="container px-5">
-            <table>
-                    <tr>
-                        <th>Friend name </th>
-                        <th>email </th>
-                        <th># of activities shared  </th>
-                    </tr>
-                <c:forEach var="each_friend" items="${list_of_friends}"><jsp:useBean id="user" scope="session" type="models.UserModel"/>
+                 <div class="row">
+                     <div class="col">
 
-                    <tr>
-                        <td>${each_friend.getFname()}, ${each_friend.getLname()}</td>
+                     </div>
+                        <div class="col">
+                            <div class="overflow-scroll" style="max-height: 30vh;">
 
-                        <td>${each_friend.getEmail()}</td>
-                        <td> ${each_friend.getActivity_list().size()}</td>
+                            <table>
+                                <tr>
+                                    <th>Friend name </th>
+                                    <th>email </th>
+                                    <th># of activities shared  </th>
+                                </tr>
+                                <c:forEach var="each_friend" items="${list_of_friends}"><jsp:useBean id="user" scope="session" type="models.UserModel"/>
 
-                    </tr>
-                </c:forEach>
-                <p>${error}</p>
-                </table>
+                                    <tr>
+                                        <td>${each_friend.getFname()}, ${each_friend.getLname()}</td>
+
+                                        <td>${each_friend.getEmail()}</td>
+                                        <td> ${each_friend.getActivity_list().size()}</td>
+
+                                    </tr>
+                                </c:forEach>
+                                <p>${error}</p>
+                            </table>
+                        </div>
+                        </div>
+
+
+                        <div class="col">
+                            <div class="card">
+                                <p>When finding a friend we suggest you always contact them via their university email address!
+                                    This allows for safe communication between students!</p>
+                            </div>
+                            <a href="index.jsp">
+                            <br><button class="btn btn-primary"  type="submit">Back</button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
 
             </div>
         </div>
