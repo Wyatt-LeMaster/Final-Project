@@ -1,5 +1,5 @@
 # COMP6000 Semester Project
-### Members: Emma Ingram, Derius Knight, Wyatt LeMaster, Mary Mitchell, Nan Yang
+### Members: Emma Ingram, Derius Knight, Wyatt LeMaster: github(earpboy1064), Mary Mitchell, Nan Yang
 
 ### Introduction
 For our project, we would like to develop a website that can connect local members of the community to other people in the area with similar interests. The website would allow a user to create an account, input their interests, and see nearby users with similar interests as well as their contact information so they can connect.<br><br>
