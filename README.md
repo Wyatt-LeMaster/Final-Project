@@ -41,6 +41,6 @@ The website has the following pages:
 *  a group recommendation page that shows the user what groups they might be interested in based on their chosen activities. 
 
 ## Potential future updates:
-allowing the users to join groups 
-allowing the users to save their chosen friends
-further error handling.
+* allowing the users to join groups 
+* allowing the users to save their chosen friends
+* further error handling.
