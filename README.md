@@ -30,4 +30,17 @@ Development Requirements:
 * Mary Mitchell - JSP/MySQL
 * Nan Yang - XML/MySQL
 
-## Post completion discussion 
+## Post-completion discussion 
+The website has the following pages:
+* Home page (index.jsp) that allows the user to access the login/register find a friend and find a group as well as each groups home page
+* a home page for all 24 groups. The homepages are generated using the file GroupPageTemplate.jsp with the data being fetched from the XML file group.xml
+* a login page that creates confirms with the database the user exists then makes a session with the user data
+* a logout servlet, while not a jsp page it invalidates the user's session when pressed
+* register page, it allows the user to input a unique username and password followed by their email, first name, and last name and they can check all a box for every activity they have an interest in
+* a recommend friend page that returns every user that has a similar activity interest including the # of shared activity interests as well as their email for contacting
+*  a group recommendation page that shows the user what groups they might be interested in based on their chosen activities. 
+
+##Potential future updates:
+allowing the users to join groups 
+allowing the users to save their chosen friends
+further error handling.
