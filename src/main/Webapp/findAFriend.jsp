@@ -22,7 +22,7 @@
     <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
 
     <link href="<c:url value="css/Style.css" />" rel="stylesheet">
-    <title>Sessions and Cookies</title>
+    <title>Hobby Helper</title>
 
 
 </head>
@@ -68,7 +68,7 @@
     <div class = "fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!">Hobby Helper</a>
+                <a class="navbar-brand" href="index.jsp">Hobby Helper</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -90,11 +90,12 @@
 <div class="px-4 pt-5 my-5 text-center border-bottom justify-content-center  flex-fill">
     <h1 class="display-4 fw-bold text-body-emphasis">Find a friend</h1>
     <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Find a friend</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <form action ="FetchRecommendedFriends" method="post">
                 <div class="form-floating">
-                    <input type="submit" value="Find" />
+                    <input class="btn btn-primary  btn-lg btn-block" type="submit" value="Find" />
+                    <p ><h2 style="color:red">${error}</h2></p>
+
                 </div>
             </form>
         </div>
@@ -129,7 +130,6 @@
 
                                     </tr>
                                 </c:forEach>
-                                <p>${error}</p>
                             </table>
                         </div>
                         </div>

@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sessions and Cookies</title>
+    <title>Hobby Helper</title>
     <link href="<c:url value="css/sign-in.css" />" rel="stylesheet">
     <link href="<c:url value="css/headers.css" />" rel="stylesheet">
 

@@ -54,7 +54,7 @@
     <link href="headers.css" rel="stylesheet">
     <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
     <link href="<c:url value="css/Style.css" />" rel="stylesheet">
-    <title>Sessions and Cookies</title>
+    <title>Hobby Helper</title>
 
     <p></p>
 </head>

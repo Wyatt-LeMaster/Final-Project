@@ -20,7 +20,7 @@
     <link href="headers.css" rel="stylesheet">
     <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
 
-    <title>Sessions and Cookies</title>
+    <title>Hobby Helper</title>
 
 
 
@@ -71,6 +71,10 @@
     </div>
 
     <input class="w-100 btn btn-lg btn-primary"  type="submit" name="Login" value="Login" /> <br/> </br>
+    Or Create a new account
+    <a href = register.jsp>
+    <input class="w-100 btn btn-lg btn-primary"  type="button" name="redirect" value="Register" /> <br/> </br>
+    </a>
     <span id="error_msg"></span>
 </form>
 
