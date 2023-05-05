@@ -29,3 +29,5 @@ Development Requirements:
 * Wyatt Lemaster - JSP/Unit testing
 * Mary Mitchell - JSP/MySQL
 * Nan Yang - XML/MySQL
+
+## Post completion discussion 
