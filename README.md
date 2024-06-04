@@ -24,9 +24,9 @@ Development Requirements:
 
 
 ### Development Roles:
+* Wyatt Lemaster - JSP/MySQL/HTML/CSS
 * Emma Ingram - XML/JSP
 * Derius Knight - XML/MySQL
-* Wyatt Lemaster - JSP/Unit testing
 * Mary Mitchell - JSP/MySQL
 * Nan Yang - XML/MySQL
 
